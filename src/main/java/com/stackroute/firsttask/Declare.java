@@ -12,10 +12,8 @@ public class Declare {
         Actor actor=new Actor(22,"Pranitha","Female");
         return actor;
     }
-    @Bean({"movieA","movieB"})
-    @Scope("prototype")
-
-    public Movie movie()
+@Bean
+    public Movie movienew()
     {
         Movie movie =new Movie(actor());
         return movie;
