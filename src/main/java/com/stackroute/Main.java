@@ -25,9 +25,13 @@ public class Main {
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
         context.register(Declare.class);
         context.refresh();
-        Movie movie=context.getBean("movie", Movie.class);
+        Movie movie=context.getBean("movieA", Movie.class);
 
-        System.out.println(movie);
+        Movie movie1=context.getBean("movieB", Movie.class);
+if(movie==movie1)
+        System.out.println(true);
+else
+    System.out.println(false);
 
 
 

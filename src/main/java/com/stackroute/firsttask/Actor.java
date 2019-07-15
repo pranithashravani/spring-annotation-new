@@ -27,11 +27,15 @@ public class Actor {
         this.age = age;
     }
 
-public Actor()
+public Actor(int age,String name,String gender)
 {
     this.age=age;
     this.name=name;
     this.gender=gender;
+}
+public Actor()
+{
+
 }
 @Override
     public String toString()
