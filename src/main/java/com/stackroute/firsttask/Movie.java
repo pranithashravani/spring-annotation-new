@@ -10,14 +10,14 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Movie {
+public class Movie implements ApplicationContextAware,BeanNameAware,BeanFactoryAware{
 
 
 
     private Actor ac;
-//private BeanFactory beanFactory;
-//private ApplicationContext context;
-//private BeanNameAware beanname;
+private BeanFactory beanFactory;
+private ApplicationContext context;
+private BeanNameAware beanname;
     public void setAc(Actor ac) {
         this.ac = ac;
     }
@@ -31,12 +31,12 @@ public class Movie {
      return ac.toString();
 
     }
- @Autowired
+
     public Movie(Actor actor) {
         this.ac = actor;
     }
 
-  /* @Override
+   @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
        this.context = context;
    }
@@ -49,5 +49,5 @@ public class Movie {
     @Override
     public void setBeanName(String s) {
         this.beanname=beanname;
-    }*/
+    }
 }
